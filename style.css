@@ -1,0 +1,147 @@
+:root {
+  --teal: #0f766e;
+  --teal-dark: #115e59;
+  --coral: #f97316;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* Navigation */
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--teal-dark);
+  display: flex; flex-wrap: wrap;
+  justify-content: space-between; align-items: center;
+  padding: 12px 6%;
+}
+.logo { color: #fff; font-weight: 700; font-size: 1.2rem; }
+nav a {
+  color: #e2e8f0; text-decoration: none;
+  margin-left: 20px; font-weight: 500;
+  transition: color .2s;
+}
+nav a:hover { color: var(--coral); }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--teal), #0ea5a4);
+  color: #fff; text-align: center;
+  padding: 80px 6%;
+}
+
+/* Works for both the "JM" initials and an <img> photo */
+.avatar {
+  width: 130px; height: 130px; border-radius: 50%;
+  object-fit: cover;
+  background: #fff; color: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem; font-weight: 700;
+  margin: 0 auto 20px;
+  border: 5px solid var(--coral);
+}
+img.avatar { display: block; }
+
+.hero h1 { font-size: 2.6rem; }
+.hero p { font-size: 1.2rem; margin: 10px auto 25px; max-width: 600px; }
+.btn {
+  display: inline-block; background: var(--coral); color: #fff;
+  padding: 12px 28px; border-radius: 30px;
+  text-decoration: none; font-weight: 600;
+  transition: transform .2s, background .2s;
+}
+.btn:hover { background: #ea580c; transform: translateY(-2px); }
+
+/* Sections */
+main section { max-width: 1000px; margin: 0 auto; padding: 60px 6%; }
+#home { max-width: none; padding: 0; }
+
+h2 {
+  color: var(--teal-dark); text-align: center;
+  font-size: 2rem; margin-bottom: 30px;
+}
+h2::after {
+  content: ""; display: block; width: 60px; height: 4px;
+  background: var(--coral); margin: 8px auto 0; border-radius: 2px;
+}
+
+/* Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--card); padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  transition: transform .2s;
+}
+.card:hover { transform: translateY(-5px); }
+.card h3 { color: var(--teal); margin-bottom: 8px; }
+.card .icon { font-size: 2rem; }
+
+/* About */
+.about-text { max-width: 760px; margin: 0 auto; text-align: center; }
+.facts {
+  list-style: none; display: flex; flex-wrap: wrap;
+  gap: 10px; justify-content: center; margin-top: 20px;
+}
+.facts li {
+  background: #ccfbf1; color: var(--teal-dark);
+  padding: 6px 16px; border-radius: 20px; font-weight: 500;
+}
+
+/* Education table */
+table {
+  width: 100%; border-collapse: collapse;
+  background: var(--card); border-radius: 12px;
+  overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+th, td { padding: 14px 16px; text-align: left; }
+th { background: var(--teal); color: #fff; }
+tr:nth-child(even) td { background: #f1f5f9; }
+.table-wrap { overflow-x: auto; }
+
+/* Contact */
+.contact-box { text-align: center; }
+.contact-box a { color: var(--teal); font-weight: 600; }
+form { max-width: 500px; margin: 25px auto 0; display: grid; gap: 12px; }
+input, textarea {
+  width: 100%; padding: 12px; border: 1px solid #cbd5e1;
+  border-radius: 8px; font: inherit;
+}
+input:focus, textarea:focus { outline: 2px solid var(--teal); }
+button {
+  background: var(--teal); color: #fff; border: 0;
+  padding: 12px; border-radius: 8px; font: inherit;
+  font-weight: 600; cursor: pointer;
+}
+button:hover { background: var(--teal-dark); }
+
+/* Footer */
+footer {
+  background: var(--teal-dark); color: #cbd5e1;
+  text-align: center; padding: 20px;
+  padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header { justify-content: center; }
+  nav { margin-top: 8px; }
+  nav a { margin: 0 8px; }
+  .hero h1 { font-size: 2rem; }
+}
